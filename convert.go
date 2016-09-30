@@ -6,7 +6,7 @@ import "errors"
 // args: value, precision(only for float)
 func String(args ...interface{}) string {
 	value := args[0]
-	var precision int = 12 // default
+	precision := 12 // default
 
 	switch value.(type) {
 	case string:
@@ -33,6 +33,8 @@ func String(args ...interface{}) string {
 			precision = args[1].(int)
 		}
 		return strconv.FormatFloat(v, 'f', precision, 64)
+	case []uint8:
+		return string(value.([]uint8)[:])
 	default:
 		return ""
 	}
