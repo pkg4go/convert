@@ -6,13 +6,29 @@ import "testing"
 func TestStrings(t *testing.T) {
 	a := A{t}
 
-	in := [][]byte{
+	in1 := []string{
+		"abc",
+		"def",
+		"ghi",
+	}
+
+	in2 := [][]byte{
 		[]byte("abc"),
 		[]byte("def"),
 		[]byte("ghi"),
 	}
 
-	out, _ := Strings(in)
+	in3 := []interface{}{
+		i("abc"),
+		i("def"),
+		i("ghi"),
+	}
 
-	a.Equal(out, []string{"abc", "def", "ghi"})
+	out1, _ := Strings(in1)
+	out2, _ := Strings(in2)
+	out3, _ := Strings(in3)
+
+	a.Equal(out1, []string{"abc", "def", "ghi"})
+	a.Equal(out2, []string{"abc", "def", "ghi"})
+	a.Equal(out3, []string{"abc", "def", "ghi"})
 }
