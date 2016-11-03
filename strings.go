@@ -3,6 +3,10 @@ package convert
 import "errors"
 
 func Strings(i interface{}) ([]string, error) {
+	if i == nil {
+		return []string{}, nil
+	}
+
 	switch i.(type) {
 	case []interface{}:
 		result := []string{}

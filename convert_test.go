@@ -5,6 +5,11 @@ import "testing"
 
 // convert to string
 
+func TestConvertNilToString(t *testing.T) {
+	a := A{t}
+	a.Equal(String(nil), "")
+}
+
 func TestConvertStringToString(t *testing.T) {
 	a := A{t}
 	a.Equal(String("123456"), "123456")
@@ -50,10 +55,16 @@ func TestConvertArrayToString(t *testing.T) {
 
 // convert to int
 
+func TestConvertNilToInt(t *testing.T) {
+	a := A{t}
+	out, e := Int(nil)
+	a.Equal(e, nil)
+	a.Equal(out, int(0))
+}
+
 func TestConvertStringToInt(t *testing.T) {
 	a := A{t}
-	in := "123"
-	out, _ := Int(in)
+	out, _ := Int("123")
 	a.Equal(out, int(123))
 }
 
@@ -94,10 +105,16 @@ func TestConvertFloat64ToInt(t *testing.T) {
 
 // convert to int32
 
+func TestConvertNilToInt32(t *testing.T) {
+	a := A{t}
+	out, e := Int32(nil)
+	a.Equal(e, nil)
+	a.Equal(out, int32(0))
+}
+
 func TestConvertStringToInt32(t *testing.T) {
 	a := A{t}
-	in := "123"
-	out, _ := Int32(in)
+	out, _ := Int32("123")
 	a.Equal(out, int32(123))
 }
 
@@ -138,10 +155,16 @@ func TestConvertFloat64ToInt32(t *testing.T) {
 
 // convert to int64
 
+func TestConvertNilToInt64(t *testing.T) {
+	a := A{t}
+	out, e := Int64(nil)
+	a.Equal(e, nil)
+	a.Equal(out, int64(0))
+}
+
 func TestConvertStringToInt64(t *testing.T) {
 	a := A{t}
-	in := "123"
-	out, _ := Int64(in)
+	out, _ := Int64("123")
 	a.Equal(out, int64(123))
 }
 
@@ -182,10 +205,16 @@ func TestConvertFloat64ToInt64(t *testing.T) {
 
 // convert to float32
 
+func TestConvertNilToFloat32(t *testing.T) {
+	a := A{t}
+	out, e := Float32(nil)
+	a.Equal(e, nil)
+	a.Equal(out, float32(0))
+}
+
 func TestConvertStringToFloat32(t *testing.T) {
 	a := A{t}
-	in := "123.456"
-	out, _ := Float32(in)
+	out, _ := Float32("123.456")
 	a.Equal(out, float32(123.456))
 }
 
@@ -226,10 +255,16 @@ func TestConvertFloat64ToFloat32(t *testing.T) {
 
 // convert to float64
 
+func TestConvertNilToFloat64(t *testing.T) {
+	a := A{t}
+	out, e := Float64(nil)
+	a.Equal(e, nil)
+	a.Equal(out, float64(0))
+}
+
 func TestConvertStringToFloat64(t *testing.T) {
 	a := A{t}
-	in := "123.456"
-	out, _ := Float64(in)
+	out, _ := Float64("123.456")
 	a.Equal(out, float64(123.456))
 }
 

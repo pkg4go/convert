@@ -41,6 +41,10 @@ func String(args ...interface{}) string {
 }
 
 func Int(value interface{}) (int, error) {
+	if value == nil {
+		return 0, nil
+	}
+
 	switch value.(type) {
 	case string:
 		v, _ := value.(string)
@@ -66,6 +70,10 @@ func Int(value interface{}) (int, error) {
 }
 
 func Int32(value interface{}) (int32, error) {
+	if value == nil {
+		return 0, nil
+	}
+
 	switch value.(type) {
 	case string:
 		v, _ := value.(string)
@@ -92,6 +100,10 @@ func Int32(value interface{}) (int32, error) {
 }
 
 func Int64(value interface{}) (int64, error) {
+	if value == nil {
+		return 0, nil
+	}
+
 	switch value.(type) {
 	case string:
 		v, _ := value.(string)
@@ -117,6 +129,10 @@ func Int64(value interface{}) (int64, error) {
 }
 
 func Float32(value interface{}) (float32, error) {
+	if value == nil {
+		return 0, nil
+	}
+
 	switch value.(type) {
 	case string:
 		v, _ := value.(string)
@@ -143,6 +159,10 @@ func Float32(value interface{}) (float32, error) {
 }
 
 func Float64(value interface{}) (float64, error) {
+	if value == nil {
+		return 0, nil
+	}
+
 	switch value.(type) {
 	case string:
 		v, _ := value.(string)
