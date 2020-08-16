@@ -1,3 +1,8 @@
+## Deprecated
+
+Using https://github.com/spf13/cast
+
+---------------------------------------------
 
 [![Build status][travis-img]][travis-url]
 [![License][license-img]][license-url]
